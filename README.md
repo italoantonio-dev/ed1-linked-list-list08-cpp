@@ -1,57 +1,69 @@
 # Estrutura de Dados I — Lista 08
 
-Exercícios de algoritmos sobre listas encadeadas da disciplina Estrutura de
-Dados I.
+Coleção de exercícios de algoritmos clássicos sobre **listas simplesmente encadeadas**, desenvolvida em C++20 na disciplina Estrutura de Dados I.
 
-**Aluno:** Italo Antônio Costa Felisbino  
-**Curso:** ADS — IFTM
+Os exercícios são compilados em alvos independentes, facilitando a execução e o estudo de cada problema.
 
-## Estrutura
+## Exercícios
 
-Cada exercício possui um executável próprio e usa o `Node<T>` externo definido
-em `include/LinkedList.h`.
+| Arquivo | Problema |
+|---|---|
+| `Exer01_MiddleNode.cpp` | Encontrar o nó central da lista |
+| `Exer02_PalindromeList.cpp` | Verificar se a sequência forma um palíndromo |
+| `Exer03_RemoveDuplicates.cpp` | Remover duplicatas de uma lista ordenada |
+| `Exer04_OddEvenList.cpp` | Agrupar nós por posições ímpares e pares |
+| `Exer05_AddTwoNumbers.cpp` | Somar números representados por listas de dígitos |
+
+O exercício de palíndromo restaura a segunda metade da lista após a comparação. O exercício de soma trabalha com o transporte (`carry`) entre as casas numéricas.
+
+## Organização
 
 ```text
-include/
-├── List.h
-└── LinkedList.h
-src/
-├── Exer01_MiddleNode.cpp
-├── Exer02_PalindromeList.cpp
-├── Exer03_RemoveDuplicates.cpp
-├── Exer04_OddEvenList.cpp
-└── Exer05_AddTwoNumbers.cpp
-CMakeLists.txt
-README.md
+.
+├── include/
+│   ├── List.h
+│   └── LinkedList.h
+├── src/
+│   ├── Exer01_MiddleNode.cpp
+│   ├── Exer02_PalindromeList.cpp
+│   ├── Exer03_RemoveDuplicates.cpp
+│   ├── Exer04_OddEvenList.cpp
+│   └── Exer05_AddTwoNumbers.cpp
+├── CMakeLists.txt
+└── README.md
 ```
 
-Os exercícios cobrem o nó central, palíndromo com restauração da lista,
-remoção de duplicatas ordenadas, agrupamento ímpar/par e soma de listas de
-dígitos invertidos com carry.
+A estrutura auxiliar `Node<T>` é definida em `include/LinkedList.h` e utilizada pelos exercícios.
 
-## Compilação e execução
+## Tecnologias e conceitos
 
-No CLion, abra a pasta do projeto e execute individualmente os alvos
-`exercicio01` a `exercicio05` no perfil Debug.
+- C++20
+- Templates e estruturas encadeadas
+- Ponteiros e manipulação de nós
+- Percurso, reorganização e comparação de listas
+- CMake e CLion
 
-No terminal:
+## Compilação
+
+Com CMake e um compilador compatível com C++20 instalados:
 
 ```powershell
 cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug
 cmake --build build --config Debug
-.\build\Debug\exercicio01.exe
-.\build\Debug\exercicio02.exe
-.\build\Debug\exercicio03.exe
-.\build\Debug\exercicio04.exe
-.\build\Debug\exercicio05.exe
 ```
 
-Os exercícios que recebem listas leem uma linha de inteiros separados por
-espaços; o exercício 05 lê duas linhas. Os PDFs não estavam disponíveis no
-workspace para confirmar qualquer detalhe adicional de apresentação.
+O projeto define os alvos `exercicio01` a `exercicio05`. Para executar um exercício no Windows, por exemplo:
 
-## Verificação executada
+```powershell
+.\build\Debug\exercicio01.exe
+```
 
-Todos os cinco alvos foram compilados em Debug com C++20 e executados com
-exemplos e casos de borda. O palíndromo restaura a segunda metade invertida
-antes de retornar, inclusive quando a comparação encontra uma diferença.
+No CLion, abra a pasta do projeto e selecione o alvo desejado no perfil Debug.
+
+## Objetivo de aprendizagem
+
+Explorar estratégias de manipulação de listas, análise de casos de borda e resolução de problemas clássicos com estruturas dinâmicas.
+
+## Contexto acadêmico
+
+Tecnologia em Análise e Desenvolvimento de Sistemas (ADS) — Instituto Federal do Triângulo Mineiro (IFTM).
